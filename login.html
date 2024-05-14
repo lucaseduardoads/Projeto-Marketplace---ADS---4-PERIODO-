@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Usuário</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- Barra de Navegação -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <a class="navbar-brand" href="#">MML SEEDSBANK</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="file:///C:/projeto-front-end-07-05-2024/index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Carrinho</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Conteúdo da Página -->
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <h2 class="mb-4">Cadastro de Usuário</h2>
+            <form id="cadastroForm">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" class="form-control" id="nome" name="nome" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha:</label>
+                    <input type="password" class="form-control" id="senha" name="senha" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<footer class="bg-dark text-light py-4 mt-4 text-center">
+    <div class="container">
+        <p>&copy; 2024 Minha Loja Online. Todos os direitos reservados.</p>
+        <p>Endereço: Rua da Minha Loja, 123 - Cidade - Estado</p>
+    </div>
+</footer>
+<!-- Bootstrap JS e jQuery (ao final do body para garantir melhor desempenho) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    $(document).ready(function(){
+        // Tratar o envio do formulário de cadastro
+        $('#cadastroForm').submit(function(event){
+            event.preventDefault(); // Impede o envio padrão do formulário
+
+            // Aqui você pode adicionar lógica para enviar os dados do formulário para o backend
+            // Por exemplo, você pode usar AJAX para fazer uma requisição POST para o servidor
+            // e lidar com a resposta do servidor aqui
+            // Exemplo de requisição AJAX:
+            /*
+            $.ajax({
+                url: 'cadastrar_usuario.php', // URL do script que trata o cadastro de usuários
+                method: 'POST',
+                data: $(this).serialize(), // Serializa os dados do formulário
+                success: function(response){
+                    // Lógica para lidar com a resposta do servidor (pode ser uma mensagem de sucesso ou erro)
+                    console.log(response);
+                }
+            });
+            */
+            
+            // Neste exemplo, apenas exibimos os dados do formulário no console
+            console.log($(this).serialize());
+        });
+    });
+</script>
+</body>
+</html>
